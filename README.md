@@ -1,1 +1,1 @@
-![project flow](C:\Users\Sayan\Desktop\projectshelf\projectshelf\pshelf\templates\image.png)
+![project flow](projectshelf\pshelf\templates\image.png)
