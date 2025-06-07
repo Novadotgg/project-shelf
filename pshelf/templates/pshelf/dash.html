@@ -1,0 +1,19 @@
+<h1>Hi {{user.username}}</h1>
+
+
+{% block content %}
+<h1>📊 Your Analytics Dashboard</h1>
+
+{% for project in projects %}
+<div style="border: 1px solid #ccc; padding: 15px; margin: 10px 0;">
+  <h2>{{ project.project_name }}</h2>
+  <p><strong>Case Study:</strong> {{ project.case_study }}</p>
+  <p>📈 Views: {{ project.views }}</p>
+  <p>🖱️ Clicks: {{ project.clicks }}</p>
+  <p>⏱️ Avg Engagement Time: {{ project.average_engagement_time|floatformat:2 }} seconds</p>
+  <a href="{{ project.project_link }}" target="_blank">🔗 Visit Project</a>
+</div>
+{% empty %}
+<p>No projects submitted yet.</p>
+{% endfor %}
+{% endblock %}

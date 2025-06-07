@@ -1,0 +1,15 @@
+{% extends 'pshelf/base.html' %}
+{% block title %}Creators{% endblock %}
+
+{% block content %}
+<h2>All Creators</h2>
+<ul>
+    {% for creator in creators %}
+        <li>
+            <a href="{% url 'creator_detail' creator.user.id %}">
+                {{ creator.user.first_name }} {{ creator.user.last_name }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

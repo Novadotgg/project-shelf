@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ProjectShelf | {% block title %}{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        {% if user.is_authenticated %}
+            <a href="{% url 'demo_home' %}">Home</a>
+            <a href="{% url 'creator_dashboard' %}">Creator Dashboard</a>
+            <a href="{% url 'creator_dashboard' %}">📊 Analytics Dashboard</a>  <!-- 🔥 Add This Line -->
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'home' %}">Home</a>
+        {% endif %}
+    </nav>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div>{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    {% block content %}{% endblock %}
+</body>
+</html>

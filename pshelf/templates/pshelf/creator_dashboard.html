@@ -1,0 +1,25 @@
+
+<h1>Hi, {{user.username}}</h1>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="Name" placeholder="Name" required>
+    <input type="radio" name="stats" value="student" checked> Student
+    <input type="radio" name="stats" value="professional"> Professional
+    <input type="text" name="project_name" placeholder="Project Name" required>
+    <input type="text" name="project_description" placeholder="Project Description" required>
+    <input type="text" name="project_image" placeholder="Project Image URL" >
+    <input type="text" name="project_link" placeholder="Project Link" >
+    <input type="date" name="project_date" placeholder="Project Date" required>
+    <input type="text" name="project_technologies" placeholder="Project Technologies" required>
+    <input type="text" name="project_outcomes" placeholder="Project Outcomes">
+    <button type="submit">Add project</button>
+
+</form>
+<a href="{% url 'dash' %}">
+    <button type="button">View Stats</button>
+</a>
+{% if case_study %}
+    <hr>
+    <h2>Generated Case Study</h2>
+    <p>{{ case_study }}</p>
+{% endif %}

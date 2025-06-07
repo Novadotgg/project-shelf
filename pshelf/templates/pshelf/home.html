@@ -1,0 +1,38 @@
+{% block content %}
+<h1>Welcome to ProjectShelf!</h1>
+
+{% comment %} <div>
+    <h1>Creator</h1>
+    <p>Login here if you are a Creator</p>
+    <form>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+    </form>
+</div>
+<div>
+    <h1>Visitor</h1>
+    <p>Login here if you are a visitor</p>
+    <form>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="{% url 'registerv' %}">Register here</a></p>
+</div> {% endcomment %}
+<div>
+    <h2>Login with your account</h2>
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+</div>
+
+
+
+
+
+
+{% endblock %}

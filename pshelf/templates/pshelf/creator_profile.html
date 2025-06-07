@@ -1,0 +1,22 @@
+{% extends 'pshelf/base.html' %}
+{% block title %}{{ creator.first_name }} {{ creator.last_name }}'s Profile{% endblock %}
+
+{% block content %}
+<h2>{{ creator.first_name }} {{ creator.last_name }}'s Case Studies</h2>
+
+{% for project in projects %}
+    <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+        <h3>{{ project.project_name }}</h3>
+
+        <!-- Show case study content -->
+        <p>{{ project.case_study }}</p>
+
+        <!-- Click tracking link -->
+        {% if project.project_link %}
+            <p>
+                <a href="{% url 'track_click' project.id %}" target="_blank">🔗 View Project</a>
+            </p>
+        {% endif %}
+    </div>
+{% endfor %}
+{% endblock %}
