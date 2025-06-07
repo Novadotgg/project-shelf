@@ -1,1 +1,1 @@
-![project flow](projectshelf\pshelf\templates\image.png)
+![project flow](pshelf/templates/image.png)
